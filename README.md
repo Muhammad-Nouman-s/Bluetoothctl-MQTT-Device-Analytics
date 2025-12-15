@@ -19,4 +19,4 @@ The notebook performs the following steps:
 9. Calculates the frequency of events for each detected device
 
 ## Dataset Note
-**Beeta** refers to the MQTT topic/environment name used during data collection and is preserved intentionally.
+**Beeta** Beeta refers to the MQTT topic/environment name used during data collection.
