@@ -1,4 +1,4 @@
-# BLE MQTT Beeta Device Analytics 
+# Bluetoothctl MQTT Device Analytics
 This repository contains a Jupyter Notebook for analyzing Bluetooth Low Energy (BLE) scan data collected via bluetoothctl and transported through MQTT.
  The notebook processes MQTT-exported CSV files, extracts device-level information, and produces clean, reproducible analytics on BLE device presence and activity. The workflow is suitable for offline analysis of BLE environments.
  
