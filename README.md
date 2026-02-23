@@ -1,22 +1,29 @@
 # Bluetoothctl MQTT Device Analytics
-This repository contains a Jupyter Notebook for analyzing Bluetooth Low Energy (BLE) scan data collected via bluetoothctl and transported through MQTT.
- The notebook processes MQTT-exported CSV files, extracts device-level information, and produces clean, reproducible analytics on BLE device presence and activity. The workflow is suitable for offline analysis of BLE environments.
+This repository contains a Jupyter Notebook and a Tkinter-based application for analyzing Bluetooth Low Energy (BLE) scan data collected via bluetoothctl and transmitted through MQTT. The workflow processes MQTT-exported CSV data, extracts device-level and controller-level information from raw scan logs, and provides structured summaries and visualizations for offline BLE data analysis.
  
-## What This Notebook Does
-The notebook performs the following steps:
+## Functional Overview
+The analysis performs the following operations:
 
-1. Loads MQTT CSV data and parses nested JSON payloads
-2. Cleans raw bluetoothctl scan output, removing ANSI escape sequences and control characters
-3. Analyzes controller-level state changes (power, discovery, pairing)
-4. Analyzes device-level state changes (NEW, CHG, DEL)
-5. Extracts BLE MAC addresses and aggregates device activity across messages
-6. Builds per-device event histories from bluetoothctl logs
-7. Identifies iBeacon advertisements, extracting:
+1. Loads MQTT-exported CSV files and parses embedded JSON payload fields.
+2. Standardizes MAC address formatting and converts timestamps to a UTC time base.
+3. Cleans raw bluetoothctl scan output by removing ANSI escape sequences and control characters.
+4. Normalizes and extracts device-level event tags (NEW, CHG, DEL) from log text.
+5. Extracts BLE MAC addresses and reconstructs per-device event sequences.
+6. Identifies iBeacon advertisement tuples and extracts:
    - UUID
    - Major
    - Minor
-8. Computes presence intervals for each device (first seen, last seen, duration)
-9. Calculates the frequency of events for each detected device
+11. Computes session-based presence metrics per device, including:
+    - First observed timestamp
+    - Last observed timestamp
+    - Number of sessions
+    - Total present duration
+    - Inter-session gap duration
+13. Extracts RSSI values from log blocks and assigns proximity classes based on predefined signal thresholds.
+14. Estimates device motion state (STATIC or MOVING) using Median Absolute Deviation (MAD)–based dispersion measures and rolling-window statistics.
+15. Aggregates NEW, CHG, and DEL events into configurable time bins.
+16. Generates visualizations of RSSI trends, proximity over time, movement indicators, empirical RSSI distributions (PDF and CDF), and binned event counts.
+17. Provides export functionality for generated figures (PDF, PNG, JPG) and associated tabular data (CSV, XLSX).
 
 ## Dataset Note
 **Beeta** refers to the MQTT topic/environment name used during data collection.
