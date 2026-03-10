@@ -13,17 +13,18 @@ The analysis performs the following operations:
    - UUID
    - Major
    - Minor
-11. Computes session-based presence metrics per device, including:
+7. Computes session-based presence metrics per device, including:
     - First observed timestamp
     - Last observed timestamp
     - Number of sessions
     - Total present duration
     - Inter-session gap duration
-13. Extracts RSSI values from log blocks and assigns proximity classes based on predefined signal thresholds.
-14. Estimates device motion state (STATIC or MOVING) using Median Absolute Deviation (MAD)–based dispersion measures and rolling-window statistics.
-15. Aggregates NEW, CHG, and DEL events into configurable time bins.
-16. Generates visualizations of RSSI trends, proximity over time, movement indicators, empirical RSSI distributions (PDF and CDF), and binned event counts.
-17. Provides export functionality for generated figures (PDF, PNG, JPG) and associated tabular data (CSV, XLSX).
+8. Provides session-level exploration, enabling inspection of device-transmitted data and associated timestamps for a selected session.
+9. Extracts RSSI values from log blocks and assigns proximity classes based on predefined signal thresholds.
+10. Estimates device motion state (STATIC or MOVING) using Median Absolute Deviation (MAD)–based dispersion measures and rolling-window statistics.
+11. Aggregates NEW, CHG, and DEL events into configurable time bins.
+12. Generates visualizations of RSSI trends, proximity over time, movement indicators, empirical RSSI distributions (PDF and CDF), and binned event counts.
+13. Provides export functionality for generated figures (PDF, PNG, JPG) and associated tabular data (CSV, XLSX).
 
 ## Dataset Note
 **Beeta** refers to the MQTT topic/environment name used during data collection.
