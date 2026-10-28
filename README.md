@@ -59,8 +59,6 @@ server. On Ubuntu, Tkinter can be installed with `sudo apt install python3-tk`.
 ## Author
 
 Muhammad Nouman, PhD researcher at the Telematics Lab, Politecnico di Bari.
-[Website](https://muhammad-nouman-s.github.io/) |
-[Google Scholar](https://scholar.google.com/citations?user=ebfBz34AAAAJ) |
-[ORCID](https://orcid.org/0000-0003-4233-5506)
+[Website](https://muhammad-nouman-s.github.io/)
 
 Released under the [MIT License](LICENSE).
